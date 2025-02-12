@@ -32,15 +32,20 @@ h1 {
     gap: 1rem;
 }
 
+/* Base button styles */
 .choice-btn {
     padding: 0.8rem 1.5rem;
-    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: left;
-    transition: background-color 0.2s;
+    transition: all 0.3s ease;
+    font-family: "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .choice-btn:hover {
@@ -152,14 +157,35 @@ input[type="text"] {
 }
 
 #backButton {
-    background-color: #6c757d;
+    background-color: #6c757d !important;
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
     display: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 #backButton:hover {
-    background-color: #5a6268;
+    background-color: #5a6268 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.2);
+}
+
+/* Specific button styles */
+.add-choice-btn {
+    background-color: #28a745 !important;
+    margin: 10px 0;
+    width: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+.add-choice-btn:hover {
+    background-color: #218838 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
 }
 
 .add-choice-btn {
@@ -182,16 +208,18 @@ input[type="text"] {
 }
 
 .remove-choice {
-    background-color: #dc3545;
-    padding: 5px 10px;
+    background-color: #dc3545 !important;
     font-size: 0.8rem;
+    padding: 5px 10px;
     margin-top: 10px;
     width: auto;
     display: inline-block;
 }
 
 .remove-choice:hover {
-    background-color: #c82333;
+    background-color: #c82333 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
 }
 
 .nested-subchoice {
@@ -202,7 +230,7 @@ input[type="text"] {
 }
 
 .add-subchoice-btn {
-    background-color: #4caf50;
+    background-color: #4caf50 !important;
     font-size: 0.8rem;
     padding: 5px 10px;
     margin-top: 5px;
@@ -210,7 +238,9 @@ input[type="text"] {
 }
 
 .add-subchoice-btn:hover {
-    background-color: #388e3c;
+    background-color: #388e3c !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
 }
 
 .sub-choice-group {
@@ -247,12 +277,22 @@ input[type="text"] {
 }
 
 .clear-btn {
-    background-color: #dc3545;
-    transition: all 0.3s ease;
+    background-color: #dc3545 !important;
+    font-size: 0.85rem;
 }
 
 .clear-btn:hover {
-    background-color: #c82333;
+    background-color: #c82333 !important;
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+}
+
+.form-buttons button:last-child {
+    background-color: #007bff !important;
+}
+
+.form-buttons button:last-child:hover {
+    background-color: #0056b3 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
 }
