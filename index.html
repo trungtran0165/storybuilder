@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Interactive Story Builder</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            .choice-btn {
+                padding: 0.8rem 1.5rem;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                text-align: left;
+                transition: all 0.3s ease;
+                /* New font styling */
+                font-family: "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+                font-size: 1rem;
+                font-weight: 500;
+                letter-spacing: 0.3px;
+                text-transform: none;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .choice-btn:hover {
+                background-color: #0056b3;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            }
+
+            #backButton {
+                background-color: #6c757d;
+                padding: 0.5rem 1rem;
+                margin-bottom: 1rem;
+                display: none;
+                /* Back button specific font */
+                font-weight: 600;
+                font-size: 0.95rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            #storySummary button {
+                /* Summary buttons */
+                font-family: "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+                font-weight: 500;
+                font-size: 1.1rem;
+                letter-spacing: 0.4px;
+            }
+
+            #addContentForm .choice-btn {
+                /* Add branch button */
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                font-size: 0.9rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="story-container">
+            <!-- Story Creation Form -->
+            <h1>Story Builder App</h1>
+            <div id="storyForm" class="add-content-section">
+                <h2>Create Your Story</h2>
+                <div class="form-group">
+                    <label>Start your story:</label>
+                    <textarea id="initialStory" rows="4" placeholder="Write the beginning of your story..."></textarea>
+                </div>
+
+                <div id="choices-container">
+                    <!-- Choices will be added here dynamically -->
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" onclick="addNewChoice()" class="choice-btn add-choice-btn">
+                        + Add Another Choice
+                    </button>
+                    
+                    <button onclick="clearForm()" class="choice-btn clear-btn">
+                        Clear Form
+                    </button>
+
+                    <button onclick="createStory()" class="choice-btn">
+                        Create Story
+                    </button>
+                </div>
+            </div>
+
+            <!-- Story Display -->
+            <div id="storyDisplay" class="hidden">
+                <button
+                    id="backButton"
+                    onclick="goBack()"
+                    class="choice-btn"
+                    style="background-color: #6c757d; margin-bottom: 10px"
+                >
+                    Go Back
+                </button>
+                <div class="story-text" id="storyText"></div>
+                <div class="choices-container" id="choicesContainer"></div>
+            </div>
+
+            <!-- Add this inside the story-container div, after storyDisplay -->
+            <div id="storySummary" class="hidden">
+                <h2>Your Story Summary</h2>
+                <div id="summaryContent" class="summary-content"></div>
+                <button onclick="restartStory()" class="choice-btn">Start New Story</button>
+            </div>
+
+            <!-- Add New Branch Form -->
+            <div class="add-content-section hidden" id="addContentForm">
+                <h3>Add New Story Branch</h3>
+                <div class="form-group">
+                    <label>New Story Text:</label>
+                    <textarea id="newStoryText" rows="3" placeholder="What happens next..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Choice 1:</label>
+                    <input type="text" id="newChoice1" placeholder="First choice option" />
+                    <textarea id="newChoice1Story" rows="2" placeholder="Outcome for first choice..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Choice 2:</label>
+                    <input type="text" id="newChoice2" placeholder="Second choice option" />
+                    <textarea id="newChoice2Story" rows="2" placeholder="Outcome for second choice..."></textarea>
+                </div>
+                <button onclick="addNewBranch()" class="choice-btn" style="background-color: #28a745">
+                    Add Branch
+                </button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
